@@ -1,8 +1,7 @@
 let currentPlayer = 'X';
 let playerXSelections = [];
 let playerOSelections = [];
-let matchX = 0;
-let matchO = 0;
+let matches = 0
 
 const winningCombinations = [
     [1, 2, 3],
@@ -15,67 +14,27 @@ const winningCombinations = [
     [3, 5, 7]
 
 ]
-
 function checkForWin(winningCombinations, playerSelections) {
     
     for (let index = 0; index < winningCombinations.length; index += 1) {
-        matchX = 0
-         matchO = 0
-        // for(let j = 0; j < playerSelections.length; j += 1) {
-
+        matches = 0
             console.log(playerSelections);
             console.log(winningCombinations[index]);
-
-
-        // if (playerXSelections.every( ai => winningCombinations[index].includes(ai))) {
-        // let winner = winningCombinations[index].forEach(function (playerSelections) {
-
-        // });
-        // if (winningCombinations[index].indexOf(playerSelections[j]) > -1 && currentPlayer === 'X') {
-        //     matchX++
-        //     console.log(matchX);
-
-        // } else if (winningCombinations[index].indexOf(playerSelections[j]) > -1 && currentPlayer === 'O'){
-        //     matchO++
-        // }
-
-        winningCombinations[index].forEach(function (playerSelections) {
-            if (currentPlayer === 'X') {
+    for (let j = 0; j < playerSelections.length;j += 1) {
+            if (winningCombinations[index].includes(playerSelections[j])) {
+                matches++
+                console.log(matches);
                 
-                
-                matchX++
-            } else if (currentPlayer === 'O') {
-                
-                
-                matchO++
             }
-
-        })
-
-
-
-
-
-        if (matchX === 3) {
-            alert('Player X Wins')
-            console.log(matchX);
-            matchX = 0;
-            return
-        } else if (matchO === 3) {
-            alert('Player O Wins')
-            console.log(matchO);
-            matchO = 0
-            return
         }
-
+        if (matches === 3) {
+            alert(currentPlayer + ' is the winner!')
+            
+            matches = 0
+            return
+        } 
     }
-
-
-
 }
-
-
-
 
 // Get all .grid-cell elements from the DOM and store in cellElementArray (see Resources links below):
 const cellElementArray = document.querySelectorAll('.grid-cell');
