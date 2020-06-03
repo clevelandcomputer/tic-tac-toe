@@ -7,7 +7,7 @@ body {
 }
 .fresh {
     position: relative;
-    margin-top: 10px;
+    top: 30px;
 }
 main {
     display: flex;
@@ -22,7 +22,31 @@ main {
     height: 96px;
     border: 1px solid blue;
     margin: 1px;
+    line-height: 96px;
+    text-align: center;
 }
 .grid-cell:hover {
-    background: orange;
+    background: black;
+}
+#whos-turn, #player1-total, #player2-total  {
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    line-height: 20px;
+}
+@keyframes spin {
+	0% {
+		transform: rotateZ(0);
+	}
+	100% {
+		transform: rotateZ(360deg);
+	}
+}
+@keyframes spin2 {
+	0% {
+		transform: rotateZ(0);
+	}
+	100% {
+		transform: rotateZ(-360deg);
+	}
 }
