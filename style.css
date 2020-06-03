@@ -4,6 +4,8 @@
 body {
     display: flex;
     justify-content: center;
+    background-color: black;
+    color: white;
 }
 .fresh {
     position: relative;
@@ -14,7 +16,7 @@ main {
     flex-wrap: wrap;
     width: 300px;
     height: 300px;
-    border: 2px solid green;
+    /* border: 2px solid green; */
     padding: 1px;
 }
 .grid-cell {
@@ -28,8 +30,15 @@ main {
 .grid-cell:hover {
     background: black;
 }
-#whos-turn, #player1-total, #player2-total  {
+#whos-turn, #player1-total, #player2-total, #reset-game  {
     position: relative;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    line-height: 20px;
+}
+ #reset-game  {
+    position: relative;
+    float: right;
     margin-top: 10px;
     margin-bottom: 5px;
     line-height: 20px;

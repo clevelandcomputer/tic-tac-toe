@@ -4,7 +4,7 @@ const playerTurn = document.querySelector('#whos-turn')
 const player1Total = document.querySelector('#player1-total')
 const player2Total = document.querySelector('#player2-total')
 const drawGame = document.querySelector('#draw-game')
-const gridCell = document.getElementsByClassName('grid-cell')
+const resetGame = document.querySelector('#reset-game')
 const cellReset1 = document.querySelector('#\\31')
 const cellReset2 = document.querySelector('#\\32')
 const cellReset3 = document.querySelector('#\\33')
@@ -130,8 +130,6 @@ for (let elementIndex = 0; elementIndex < cellElementArray.length; elementIndex 
             }
             playerTurn.innerText = ' ' + player2.value + '\'' + 's'
             currentPlayer = 'O'
-            
-            currentCellElement.removeEventListener('click', (event), false);
         } else if (currentPlayer === 'O') {
             
             clickedCellElement.style.animation = 'spin2 .75s linear'
@@ -147,3 +145,37 @@ for (let elementIndex = 0; elementIndex < cellElementArray.length; elementIndex 
         console.log("You clicked on cell number: " + clickedCellElement.id)
     });
 }
+    resetGame.addEventListener('click', function(){
+        currentPlayer = 'X'
+        playerXSelections = []
+        playerOSelections = []
+        matches = 0
+        player1Increment = 0
+        player2Increment = 0
+        drawGameTotal = 0
+        playerTurn.innerText = null
+        player1Total.innerText = null
+        player2Total.innerText = null
+        drawGame.innerText = null
+        player1.value = 'X'
+        player2.value = 'O'
+
+        for (let p1Reset = 0; p1Reset < 9; p1Reset++) {
+            let newNum = cellReset[p1Reset]
+            newNum.innerText = null
+            newNum.style.backgroundColor = null
+            
+        }
+        for (let p2Reset = 0; p2Reset < 9; p2Reset++) {
+            let newNum = cellReset[p2Reset]
+            newNum.innerText = null
+            newNum.style.backgroundColor = null
+            
+        }
+        for (let reset = 0; reset < 9; reset++) {
+            let newNum = cellReset[reset]
+            newNum.innerText = null
+            newNum.style.backgroundColor = null
+        }
+
+    })
