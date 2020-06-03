@@ -34,6 +34,10 @@ function checkForWin(winningCombinations, playerSelections) {
             return
         } 
     }
+    if(playerOSelections.length + playerXSelections.length === 9){
+        alert('Draw')
+        return
+    }
 }
 
 // Get all .grid-cell elements from the DOM and store in cellElementArray (see Resources links below):

@@ -5,6 +5,10 @@ body {
     display: flex;
     justify-content: center;
 }
+.fresh {
+    position: relative;
+    margin-top: 10px;
+}
 main {
     display: flex;
     flex-wrap: wrap;
